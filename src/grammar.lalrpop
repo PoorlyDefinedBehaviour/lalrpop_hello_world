@@ -3,20 +3,19 @@ use crate::ast::{Expr, Opcode};
 
 grammar;
 
-pub Expr: Box<Expr> = {
-  <left: Expr> <op: ExprOp> <right: Factor> => Box::new(Expr::Op(left, op, right)),
-  Factor
-}
+Tier<Op, NextTier>: Box<Expr> = {
+  <left: Tier<Op, NextTier>> <op: Op> <right: NextTier> => Box::new(Expr::Op(left, op, right)),
+  NextTier,
+};
+
+pub Expr = Tier<ExprOp, Factor>;
 
 ExprOp: Opcode = {
   "+" => Opcode::Add,
   "-" => Opcode::Sub,
 }
 
-Factor: Box<Expr> = {
-  <left: Factor> <op: FactorOp> <right: Term> => Box::new(Expr::Op(left, op, right)),
-  Term
-}
+Factor = Tier<FactorOp, Term>;
 
 FactorOp: Opcode = {
   "*" => Opcode::Mul,
