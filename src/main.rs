@@ -1,5 +1,12 @@
-mod ast;
+pub mod ast;
+
+#[macro_use]
+extern crate lalrpop_util;
+
+lalrpop_mod!(pub grammar);
 
 fn main() {
-    println!("Hello, world!");
+  let expr = grammar::ExprParser::new().parse("2");
+
+  dbg!(&expr);
 }
