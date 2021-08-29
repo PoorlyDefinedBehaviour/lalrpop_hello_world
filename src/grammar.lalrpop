@@ -8,6 +8,17 @@ Tier<Op, NextTier>: Box<Expr> = {
   NextTier,
 };
 
+List<T>: Vec<T> = {
+  <mut xs: (<T> ",")*> <value: T?> => match value {
+    None => xs,
+    Some(value) => {
+      xs.push(value);
+      xs
+    }
+  }
+}
+
+pub Exprs = List<Expr>;
 pub Expr = Tier<ExprOp, Factor>;
 
 ExprOp: Opcode = {

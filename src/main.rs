@@ -6,7 +6,7 @@ extern crate lalrpop_util;
 lalrpop_mod!(pub grammar);
 
 fn main() {
-  let expr = grammar::ExprParser::new().parse("2 + 2 * 3");
+  let expr = grammar::ExprsParser::new().parse("2,2");
 
   dbg!(&expr);
 }
