@@ -1,8 +1,9 @@
 use std::str::FromStr;
 use crate::ast::{Expr, Opcode};
 use lalrpop_util::ParseError;
+use lalrpop_util::ErrorRecovery;
 
-grammar;
+grammar<'err>(errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>);
 
 Tier<Op, NextTier>: Box<Expr> = {
   <left: Tier<Op, NextTier>> <op: Op> <right: NextTier> => Box::new(Expr::Op(left, op, right)),
@@ -36,7 +37,11 @@ FactorOp: Opcode = {
 
 Term: Box<Expr> = {
   <n: Num> => Box::new(Expr::Number(n)),
-  "(" <Expr> ")"
+  "(" <Expr> ")",
+  <error: !> => {
+    errors.push(error);
+    Box::new(Expr::Error)
+  }
 }
 
 Num: i32 = <s: r"[0-9]+"> =>? i32::from_str(s).map_err(|_| ParseError::User{ error: "number is too big" });

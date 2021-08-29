@@ -10,4 +10,5 @@ pub enum Opcode {
 pub enum Expr {
   Number(i32),
   Op(Box<Expr>, Opcode, Box<Expr>),
+  Error,
 }
