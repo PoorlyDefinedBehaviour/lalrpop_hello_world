@@ -8,7 +8,7 @@ lalrpop_mod!(pub grammar);
 fn main() {
   let mut errors = Vec::new();
 
-  let expr = grammar::ExprParser::new().parse(&mut errors, "2 + 2, * 3");
+  let expr = grammar::ExprParser::new().parse(2, &mut errors, "2 + 2, * 3");
 
   dbg!(&errors);
 

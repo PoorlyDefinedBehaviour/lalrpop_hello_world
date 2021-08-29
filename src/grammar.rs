@@ -1,8 +1,9 @@
 // auto-generated: "lalrpop 0.19.6"
-// sha3: b9e3dfd77469473baf067592dc97585f937f2bbfb73f99297bab28907c1e
+// sha3: e69844c2209ecd8763e08831baf79c8b9beb8e7a2be0f1f2e12d359767727f
 use std::str::FromStr;
 use crate::ast::{Expr, Opcode};
 use lalrpop_util::ParseError;
+use lalrpop_util::ErrorRecovery;
 #[allow(unused_extern_crates)]
 extern crate lalrpop_util as __lalrpop_util;
 #[allow(unused_imports)]
@@ -17,6 +18,7 @@ mod __parse__Expr {
     use std::str::FromStr;
     use crate::ast::{Expr, Opcode};
     use lalrpop_util::ParseError;
+    use lalrpop_util::ErrorRecovery;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -168,6 +170,7 @@ mod __parse__Expr {
     pub(crate) struct __StateMachine<'input, 'err>
     where 'input: 'err, 'static: 'err
     {
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __phantom: core::marker::PhantomData<(&'input (), &'err ())>,
@@ -250,6 +253,7 @@ mod __parse__Expr {
             symbols: &mut alloc::vec::Vec<__state_machine::SymbolTriple<Self>>,
         ) -> Option<__state_machine::ParseResult<Self>> {
             __reduce(
+                self.scale,
                 self.errors,
                 self.input,
                 action,
@@ -499,6 +503,7 @@ mod __parse__Expr {
             'err,
         >(
             &self,
+            scale: i32,
             errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
             input: &'input str,
         ) -> Result<Box<Expr>, __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
@@ -506,6 +511,7 @@ mod __parse__Expr {
             let mut __tokens = self.builder.matcher(input);
             __state_machine::Parser::drive(
                 __StateMachine {
+                    scale,
                     errors,
                     input,
                     __phantom: core::marker::PhantomData::<(&(), &())>,
@@ -518,6 +524,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __error_state: i8,
@@ -554,6 +561,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __action: i8,
@@ -565,65 +573,65 @@ mod __parse__Expr {
     {
         let (__pop_states, __nonterminal) = match __action {
             0 => {
-                __reduce0(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce0(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             1 => {
-                __reduce1(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce1(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             2 => {
-                __reduce2(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce2(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             3 => {
-                __reduce3(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce3(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             4 => {
-                __reduce4(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce4(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             5 => {
-                __reduce5(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce5(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             6 => {
-                __reduce6(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce6(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             7 => {
-                __reduce7(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce7(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             8 => {
-                __reduce8(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce8(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             9 => {
-                __reduce9(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce9(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             10 => {
-                __reduce10(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce10(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             11 => {
-                __reduce11(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce11(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             12 => {
-                __reduce12(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce12(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             13 => {
-                __reduce13(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce13(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             14 => {
-                __reduce14(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce14(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             15 => {
-                __reduce15(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce15(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             16 => {
-                __reduce16(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce16(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             17 => {
-                __reduce17(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce17(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             18 => {
                 // Num = r#"[0-9]+"# => ActionFn(12);
                 let __sym0 = __pop_Variant0(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
-                let __nt = match super::__action12::<>(errors, input, __sym0) {
+                let __nt = match super::__action12::<>(scale, errors, input, __sym0) {
                     Ok(v) => v,
                     Err(e) => return Some(Err(e)),
                 };
@@ -631,36 +639,36 @@ mod __parse__Expr {
                 (1, 10)
             }
             19 => {
-                __reduce19(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce19(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             20 => {
-                __reduce20(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce20(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             21 => {
-                __reduce21(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce21(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             22 => {
-                __reduce22(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce22(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             23 => {
-                __reduce23(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce23(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             24 => {
-                __reduce24(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce24(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             25 => {
-                __reduce25(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce25(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             26 => {
                 // __Expr = Expr => ActionFn(1);
                 let __sym0 = __pop_Variant2(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
-                let __nt = super::__action1::<>(errors, input, __sym0);
+                let __nt = super::__action1::<>(scale, errors, input, __sym0);
                 return Some(Ok(__nt));
             }
             27 => {
-                __reduce27(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce27(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -767,6 +775,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -780,7 +789,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
-        let __nt = super::__action22::<>(errors, input, __sym0, __sym1);
+        let __nt = super::__action22::<>(scale, errors, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (2, 0)
     }
@@ -788,6 +797,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -798,7 +808,7 @@ mod __parse__Expr {
         // (<Expr> ",")* =  => ActionFn(20);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
-        let __nt = super::__action20::<>(errors, input, &__start, &__end);
+        let __nt = super::__action20::<>(scale, errors, input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (0, 1)
     }
@@ -806,6 +816,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -817,7 +828,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action21::<>(errors, input, __sym0);
+        let __nt = super::__action21::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 1)
     }
@@ -825,6 +836,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -838,7 +850,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
-        let __nt = super::__action25::<>(errors, input, __sym0, __sym1);
+        let __nt = super::__action25::<>(scale, errors, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (2, 2)
     }
@@ -846,6 +858,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -860,7 +873,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action26::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action26::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (3, 2)
     }
@@ -868,6 +881,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -879,7 +893,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action3::<>(errors, input, __sym0);
+        let __nt = super::__action3::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
@@ -887,6 +901,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -898,7 +913,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action18::<>(errors, input, __sym0);
+        let __nt = super::__action18::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 4)
     }
@@ -906,6 +921,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -916,7 +932,7 @@ mod __parse__Expr {
         // Expr? =  => ActionFn(19);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
-        let __nt = super::__action19::<>(errors, input, &__start, &__end);
+        let __nt = super::__action19::<>(scale, errors, input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (0, 4)
     }
@@ -924,6 +940,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -935,7 +952,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action4::<>(errors, input, __sym0);
+        let __nt = super::__action4::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 5)
     }
@@ -943,6 +960,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -954,7 +972,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action5::<>(errors, input, __sym0);
+        let __nt = super::__action5::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 5)
     }
@@ -962,6 +980,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -973,7 +992,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action2::<>(errors, input, __sym0);
+        let __nt = super::__action2::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 6)
     }
@@ -981,6 +1000,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -992,7 +1012,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action6::<>(errors, input, __sym0);
+        let __nt = super::__action6::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 7)
     }
@@ -1000,6 +1020,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1011,7 +1032,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action7::<>(errors, input, __sym0);
+        let __nt = super::__action7::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 8)
     }
@@ -1019,6 +1040,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1030,7 +1052,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action8::<>(errors, input, __sym0);
+        let __nt = super::__action8::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 8)
     }
@@ -1038,6 +1060,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1049,7 +1072,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action29::<>(errors, input, __sym0);
+        let __nt = super::__action29::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 9)
     }
@@ -1057,6 +1080,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1067,7 +1091,7 @@ mod __parse__Expr {
         // List<Expr> =  => ActionFn(30);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
-        let __nt = super::__action30::<>(errors, input, &__start, &__end);
+        let __nt = super::__action30::<>(scale, errors, input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (0, 9)
     }
@@ -1075,6 +1099,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1088,7 +1113,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
-        let __nt = super::__action31::<>(errors, input, __sym0, __sym1);
+        let __nt = super::__action31::<>(scale, errors, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (2, 9)
     }
@@ -1096,6 +1121,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1107,7 +1133,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action32::<>(errors, input, __sym0);
+        let __nt = super::__action32::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 9)
     }
@@ -1115,6 +1141,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1126,7 +1153,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant7(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action9::<>(errors, input, __sym0);
+        let __nt = super::__action9::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 11)
     }
@@ -1134,6 +1161,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1148,7 +1176,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action10::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action10::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 11)
     }
@@ -1156,6 +1184,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1167,7 +1196,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action11::<>(errors, input, __sym0);
+        let __nt = super::__action11::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 11)
     }
@@ -1175,6 +1204,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1189,7 +1219,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action15::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action15::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 12)
     }
@@ -1197,6 +1227,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1208,7 +1239,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action16::<>(errors, input, __sym0);
+        let __nt = super::__action16::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
@@ -1216,6 +1247,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1230,7 +1262,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action13::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action13::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 13)
     }
@@ -1238,6 +1270,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1249,7 +1282,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action14::<>(errors, input, __sym0);
+        let __nt = super::__action14::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 13)
     }
@@ -1257,6 +1290,7 @@ mod __parse__Expr {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -1268,7 +1302,7 @@ mod __parse__Expr {
         let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action0::<>(errors, input, __sym0);
+        let __nt = super::__action0::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 15)
     }
@@ -1282,6 +1316,7 @@ mod __parse__Exprs {
     use std::str::FromStr;
     use crate::ast::{Expr, Opcode};
     use lalrpop_util::ParseError;
+    use lalrpop_util::ErrorRecovery;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -1461,6 +1496,7 @@ mod __parse__Exprs {
     pub(crate) struct __StateMachine<'input, 'err>
     where 'input: 'err, 'static: 'err
     {
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __phantom: core::marker::PhantomData<(&'input (), &'err ())>,
@@ -1543,6 +1579,7 @@ mod __parse__Exprs {
             symbols: &mut alloc::vec::Vec<__state_machine::SymbolTriple<Self>>,
         ) -> Option<__state_machine::ParseResult<Self>> {
             __reduce(
+                self.scale,
                 self.errors,
                 self.input,
                 action,
@@ -1792,6 +1829,7 @@ mod __parse__Exprs {
             'err,
         >(
             &self,
+            scale: i32,
             errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
             input: &'input str,
         ) -> Result<Vec<Box<Expr>>, __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
@@ -1799,6 +1837,7 @@ mod __parse__Exprs {
             let mut __tokens = self.builder.matcher(input);
             __state_machine::Parser::drive(
                 __StateMachine {
+                    scale,
                     errors,
                     input,
                     __phantom: core::marker::PhantomData::<(&(), &())>,
@@ -1811,6 +1850,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __error_state: i8,
@@ -1847,6 +1887,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __action: i8,
@@ -1858,65 +1899,65 @@ mod __parse__Exprs {
     {
         let (__pop_states, __nonterminal) = match __action {
             0 => {
-                __reduce0(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce0(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             1 => {
-                __reduce1(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce1(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             2 => {
-                __reduce2(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce2(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             3 => {
-                __reduce3(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce3(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             4 => {
-                __reduce4(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce4(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             5 => {
-                __reduce5(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce5(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             6 => {
-                __reduce6(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce6(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             7 => {
-                __reduce7(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce7(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             8 => {
-                __reduce8(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce8(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             9 => {
-                __reduce9(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce9(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             10 => {
-                __reduce10(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce10(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             11 => {
-                __reduce11(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce11(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             12 => {
-                __reduce12(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce12(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             13 => {
-                __reduce13(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce13(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             14 => {
-                __reduce14(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce14(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             15 => {
-                __reduce15(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce15(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             16 => {
-                __reduce16(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce16(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             17 => {
-                __reduce17(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce17(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             18 => {
                 // Num = r#"[0-9]+"# => ActionFn(12);
                 let __sym0 = __pop_Variant0(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
-                let __nt = match super::__action12::<>(errors, input, __sym0) {
+                let __nt = match super::__action12::<>(scale, errors, input, __sym0) {
                     Ok(v) => v,
                     Err(e) => return Some(Err(e)),
                 };
@@ -1924,35 +1965,35 @@ mod __parse__Exprs {
                 (1, 10)
             }
             19 => {
-                __reduce19(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce19(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             20 => {
-                __reduce20(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce20(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             21 => {
-                __reduce21(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce21(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             22 => {
-                __reduce22(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce22(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             23 => {
-                __reduce23(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce23(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             24 => {
-                __reduce24(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce24(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             25 => {
-                __reduce25(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce25(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             26 => {
-                __reduce26(errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
+                __reduce26(scale, errors, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&(), &())>)
             }
             27 => {
                 // __Exprs = Exprs => ActionFn(0);
                 let __sym0 = __pop_Variant6(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
-                let __nt = super::__action0::<>(errors, input, __sym0);
+                let __nt = super::__action0::<>(scale, errors, input, __sym0);
                 return Some(Ok(__nt));
             }
             _ => panic!("invalid action code {}", __action)
@@ -2060,6 +2101,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2073,7 +2115,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
-        let __nt = super::__action22::<>(errors, input, __sym0, __sym1);
+        let __nt = super::__action22::<>(scale, errors, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (2, 0)
     }
@@ -2081,6 +2123,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2091,7 +2134,7 @@ mod __parse__Exprs {
         // (<Expr> ",")* =  => ActionFn(20);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
-        let __nt = super::__action20::<>(errors, input, &__start, &__end);
+        let __nt = super::__action20::<>(scale, errors, input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (0, 1)
     }
@@ -2099,6 +2142,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2110,7 +2154,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action21::<>(errors, input, __sym0);
+        let __nt = super::__action21::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 1)
     }
@@ -2118,6 +2162,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2131,7 +2176,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
-        let __nt = super::__action25::<>(errors, input, __sym0, __sym1);
+        let __nt = super::__action25::<>(scale, errors, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (2, 2)
     }
@@ -2139,6 +2184,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2153,7 +2199,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action26::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action26::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (3, 2)
     }
@@ -2161,6 +2207,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2172,7 +2219,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action3::<>(errors, input, __sym0);
+        let __nt = super::__action3::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
@@ -2180,6 +2227,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2191,7 +2239,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action18::<>(errors, input, __sym0);
+        let __nt = super::__action18::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 4)
     }
@@ -2199,6 +2247,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2209,7 +2258,7 @@ mod __parse__Exprs {
         // Expr? =  => ActionFn(19);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
-        let __nt = super::__action19::<>(errors, input, &__start, &__end);
+        let __nt = super::__action19::<>(scale, errors, input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (0, 4)
     }
@@ -2217,6 +2266,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2228,7 +2278,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action4::<>(errors, input, __sym0);
+        let __nt = super::__action4::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 5)
     }
@@ -2236,6 +2286,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2247,7 +2298,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action5::<>(errors, input, __sym0);
+        let __nt = super::__action5::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 5)
     }
@@ -2255,6 +2306,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2266,7 +2318,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action2::<>(errors, input, __sym0);
+        let __nt = super::__action2::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 6)
     }
@@ -2274,6 +2326,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2285,7 +2338,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action6::<>(errors, input, __sym0);
+        let __nt = super::__action6::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 7)
     }
@@ -2293,6 +2346,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2304,7 +2358,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action7::<>(errors, input, __sym0);
+        let __nt = super::__action7::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 8)
     }
@@ -2312,6 +2366,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2323,7 +2378,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action8::<>(errors, input, __sym0);
+        let __nt = super::__action8::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 8)
     }
@@ -2331,6 +2386,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2342,7 +2398,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action29::<>(errors, input, __sym0);
+        let __nt = super::__action29::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 9)
     }
@@ -2350,6 +2406,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2360,7 +2417,7 @@ mod __parse__Exprs {
         // List<Expr> =  => ActionFn(30);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
-        let __nt = super::__action30::<>(errors, input, &__start, &__end);
+        let __nt = super::__action30::<>(scale, errors, input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (0, 9)
     }
@@ -2368,6 +2425,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2381,7 +2439,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
-        let __nt = super::__action31::<>(errors, input, __sym0, __sym1);
+        let __nt = super::__action31::<>(scale, errors, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (2, 9)
     }
@@ -2389,6 +2447,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2400,7 +2459,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action32::<>(errors, input, __sym0);
+        let __nt = super::__action32::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 9)
     }
@@ -2408,6 +2467,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2419,7 +2479,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant7(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action9::<>(errors, input, __sym0);
+        let __nt = super::__action9::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 11)
     }
@@ -2427,6 +2487,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2441,7 +2502,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action10::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action10::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 11)
     }
@@ -2449,6 +2510,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2460,7 +2522,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action11::<>(errors, input, __sym0);
+        let __nt = super::__action11::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 11)
     }
@@ -2468,6 +2530,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2482,7 +2545,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action15::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action15::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 12)
     }
@@ -2490,6 +2553,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2501,7 +2565,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action16::<>(errors, input, __sym0);
+        let __nt = super::__action16::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
@@ -2509,6 +2573,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2523,7 +2588,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
-        let __nt = super::__action13::<>(errors, input, __sym0, __sym1, __sym2);
+        let __nt = super::__action13::<>(scale, errors, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 13)
     }
@@ -2531,6 +2596,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2542,7 +2608,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action14::<>(errors, input, __sym0);
+        let __nt = super::__action14::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 13)
     }
@@ -2550,6 +2616,7 @@ mod __parse__Exprs {
         'input,
         'err,
     >(
+        scale: i32,
         errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
         input: &'input str,
         __lookahead_start: Option<&usize>,
@@ -2561,7 +2628,7 @@ mod __parse__Exprs {
         let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
-        let __nt = super::__action1::<>(errors, input, __sym0);
+        let __nt = super::__action1::<>(scale, errors, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 14)
     }
@@ -2573,6 +2640,7 @@ mod __intern_token {
     use std::str::FromStr;
     use crate::ast::{Expr, Opcode};
     use lalrpop_util::ParseError;
+    use lalrpop_util::ErrorRecovery;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -2601,6 +2669,7 @@ fn __action0<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Vec<Box<Expr>>, usize),
@@ -2614,6 +2683,7 @@ fn __action1<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2627,6 +2697,7 @@ fn __action2<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Vec<Box<Expr>>, usize),
@@ -2640,6 +2711,7 @@ fn __action3<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2653,6 +2725,7 @@ fn __action4<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, &'input str, usize),
@@ -2666,6 +2739,7 @@ fn __action5<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, &'input str, usize),
@@ -2679,6 +2753,7 @@ fn __action6<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2692,6 +2767,7 @@ fn __action7<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, &'input str, usize),
@@ -2705,6 +2781,7 @@ fn __action8<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, &'input str, usize),
@@ -2718,6 +2795,7 @@ fn __action9<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, n, _): (usize, i32, usize),
@@ -2731,6 +2809,7 @@ fn __action10<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, _, _): (usize, &'input str, usize),
@@ -2746,6 +2825,7 @@ fn __action11<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, error, _): (usize, __lalrpop_util::ErrorRecovery<usize, Token<'input>, &'static str>, usize),
@@ -2753,7 +2833,7 @@ fn __action11<
 {
     {
     errors.push(error);
-    Box::new(Expr::Error),
+    Box::new(Expr::Error)
   }
 }
 
@@ -2762,12 +2842,17 @@ fn __action12<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, s, _): (usize, &'input str, usize),
 ) -> Result<i32,__lalrpop_util::ParseError<usize,Token<'input>,&'static str>>
 {
-    i32::from_str(s).map_err(|_| ParseError::User{ error: "number is too big" })
+    {
+  i32::from_str(s)
+  .map(|x| x * scale)
+  .map_err(|_| ParseError::User{ error: "number is too big" })
+}
 }
 
 #[allow(unused_variables)]
@@ -2775,6 +2860,7 @@ fn __action13<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, left, _): (usize, Box<Expr>, usize),
@@ -2790,6 +2876,7 @@ fn __action14<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2803,6 +2890,7 @@ fn __action15<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, left, _): (usize, Box<Expr>, usize),
@@ -2818,6 +2906,7 @@ fn __action16<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2831,6 +2920,7 @@ fn __action17<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, mut xs, _): (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -2851,6 +2941,7 @@ fn __action18<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2864,6 +2955,7 @@ fn __action19<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __lookbehind: &usize,
@@ -2878,6 +2970,7 @@ fn __action20<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __lookbehind: &usize,
@@ -2892,6 +2985,7 @@ fn __action21<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, v, _): (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -2905,6 +2999,7 @@ fn __action22<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2919,6 +3014,7 @@ fn __action23<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, __0, _): (usize, Box<Expr>, usize),
@@ -2932,6 +3028,7 @@ fn __action24<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     (_, v, _): (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -2946,6 +3043,7 @@ fn __action25<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, Box<Expr>, usize),
@@ -2955,6 +3053,7 @@ fn __action25<
     let __start0 = __0.0.clone();
     let __end0 = __1.2.clone();
     let __temp0 = __action22(
+        scale,
         errors,
         input,
         __0,
@@ -2962,6 +3061,7 @@ fn __action25<
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action23(
+        scale,
         errors,
         input,
         __temp0,
@@ -2973,6 +3073,7 @@ fn __action26<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -2983,6 +3084,7 @@ fn __action26<
     let __start0 = __1.0.clone();
     let __end0 = __2.2.clone();
     let __temp0 = __action22(
+        scale,
         errors,
         input,
         __1,
@@ -2990,6 +3092,7 @@ fn __action26<
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action24(
+        scale,
         errors,
         input,
         __0,
@@ -3002,6 +3105,7 @@ fn __action27<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, core::option::Option<Box<Expr>>, usize),
@@ -3010,6 +3114,7 @@ fn __action27<
     let __start0 = __0.0.clone();
     let __end0 = __0.0.clone();
     let __temp0 = __action20(
+        scale,
         errors,
         input,
         &__start0,
@@ -3017,6 +3122,7 @@ fn __action27<
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action17(
+        scale,
         errors,
         input,
         __temp0,
@@ -3029,6 +3135,7 @@ fn __action28<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -3038,12 +3145,14 @@ fn __action28<
     let __start0 = __0.0.clone();
     let __end0 = __0.2.clone();
     let __temp0 = __action21(
+        scale,
         errors,
         input,
         __0,
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action17(
+        scale,
         errors,
         input,
         __temp0,
@@ -3056,6 +3165,7 @@ fn __action29<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, Box<Expr>, usize),
@@ -3064,12 +3174,14 @@ fn __action29<
     let __start0 = __0.0.clone();
     let __end0 = __0.2.clone();
     let __temp0 = __action18(
+        scale,
         errors,
         input,
         __0,
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action27(
+        scale,
         errors,
         input,
         __temp0,
@@ -3081,6 +3193,7 @@ fn __action30<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __lookbehind: &usize,
@@ -3090,6 +3203,7 @@ fn __action30<
     let __start0 = __lookbehind.clone();
     let __end0 = __lookahead.clone();
     let __temp0 = __action19(
+        scale,
         errors,
         input,
         &__start0,
@@ -3097,6 +3211,7 @@ fn __action30<
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action27(
+        scale,
         errors,
         input,
         __temp0,
@@ -3108,6 +3223,7 @@ fn __action31<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -3117,12 +3233,14 @@ fn __action31<
     let __start0 = __1.0.clone();
     let __end0 = __1.2.clone();
     let __temp0 = __action18(
+        scale,
         errors,
         input,
         __1,
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action28(
+        scale,
         errors,
         input,
         __0,
@@ -3135,6 +3253,7 @@ fn __action32<
     'input,
     'err,
 >(
+    scale: i32,
     errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>,
     input: &'input str,
     __0: (usize, alloc::vec::Vec<Box<Expr>>, usize),
@@ -3143,6 +3262,7 @@ fn __action32<
     let __start0 = __0.2.clone();
     let __end0 = __0.2.clone();
     let __temp0 = __action19(
+        scale,
         errors,
         input,
         &__start0,
@@ -3150,6 +3270,7 @@ fn __action32<
     );
     let __temp0 = (__start0, __temp0, __end0);
     __action28(
+        scale,
         errors,
         input,
         __0,

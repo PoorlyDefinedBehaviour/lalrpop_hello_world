@@ -3,7 +3,7 @@ use crate::ast::{Expr, Opcode};
 use lalrpop_util::ParseError;
 use lalrpop_util::ErrorRecovery;
 
-grammar<'err>(errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>);
+grammar<'err>(scale: i32, errors: &'err mut Vec<ErrorRecovery<usize, Token<'input>, &'static str>>);
 
 Tier<Op, NextTier>: Box<Expr> = {
   <left: Tier<Op, NextTier>> <op: Op> <right: NextTier> => Box::new(Expr::Op(left, op, right)),
@@ -44,4 +44,8 @@ Term: Box<Expr> = {
   }
 }
 
-Num: i32 = <s: r"[0-9]+"> =>? i32::from_str(s).map_err(|_| ParseError::User{ error: "number is too big" });
+Num: i32 = <s: r"[0-9]+"> =>? {
+  i32::from_str(s)
+  .map(|x| x * scale)
+  .map_err(|_| ParseError::User{ error: "number is too big" })
+};
